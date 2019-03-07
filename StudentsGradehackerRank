@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Studentsgrade
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int inputLine = int.Parse(Console.ReadLine());
+            List<int> grades = new List<int>();
+            for (int i = 0; i < inputLine; i++)
+            {
+                int grade = int.Parse(Console.ReadLine());
+                grades.Add(grade);
+
+               
+               
+            }
+           List<int> sorted= grades.Select(grade => grade < 38 || (grade % 5 < 3) ? grade : grade + (5 - grade % 5)).ToList();
+            foreach (var item in sorted)
+            {
+                Console.WriteLine(item);
+            }
+               
+
+        }
+    }
+}
